@@ -1,0 +1,10 @@
+[package]
+name = "wifi_auth"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# cookies feature is absolutely required to maintain the session state
+reqwest = { version = "0.12", features = ["cookies"] }
+tokio = { version = "1", features = ["full"] }
+scraper = "0.20"
