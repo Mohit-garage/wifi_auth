@@ -1,0 +1,17 @@
+// Keep the error categories intentionally coarse at the Android boundary.
+// Detailed transport errors remain internal to Rust and must not leak into
+// UI messages, logs, or the generated FFI surface.
+[Error]
+enum AuthError {
+    "NetworkError",
+    "ParseError",
+    "RuntimeError",
+    "AuthenticationFailed",
+    "ChallengeRequired"
+};
+
+namespace wifi_auth {
+    // This function can fail with one of the AuthError variants above.
+    [Throws=AuthError]
+    string authenticate(string login_url, string username, string password);
+};

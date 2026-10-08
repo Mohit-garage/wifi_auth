@@ -3,8 +3,18 @@ name = "wifi_auth"
 version = "0.1.0"
 edition = "2021"
 
+[lib]
+crate-type = ["cdylib", "rlib"]
+
 [dependencies]
-# cookies feature is absolutely required to maintain the session state
-reqwest = { version = "0.12", features = ["cookies"] }
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "cookies"] }
 tokio = { version = "1", features = ["full"] }
-scraper = "0.20"
+uniffi = { version = "0.27.3", features = ["cli", "build"] }
+thiserror = "1.0"
+
+[build-dependencies]
+uniffi = { version = "0.27.3", features = ["build"] }
+
+[[bin]]
+name = "uniffi-bindgen"
+path = "uniffi-bindgen.rs"

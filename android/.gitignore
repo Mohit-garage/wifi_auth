@@ -1,0 +1,26 @@
+# Rust
+/target/
+
+# Android/Gradle
+.gradle/
+**/build/
+local.properties
+.idea/
+*.iml
+.cxx/
+.externalNativeBuild/
+
+# Generated/local files
+captures/
+*.apk
+*.aab
+
+# Secrets
+*.jks
+*.keystore
+.env
+credentials.json
+
+.binding-output/
+.binding-shell.udl
+src/.binding-shell.udl
