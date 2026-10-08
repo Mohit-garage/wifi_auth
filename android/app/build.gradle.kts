@@ -6,13 +6,13 @@ plugins {
 android {
     namespace = "com.example.wifiauth"
     compileSdk {
-        version = release(37)
+    version = release(35)
     }
 
     defaultConfig {
         applicationId = "com.example.wifiauth"
         minSdk = 26
-        targetSdk = 37
+        targetSdk = 35
         versionCode = 3
         versionName = "1.0"
 

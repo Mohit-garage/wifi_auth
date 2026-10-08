@@ -34,10 +34,10 @@ jobs:
 
       - name: Install Android SDK packages
         run: |
-          sdkmanager --sdk_root="${ANDROID_SDK_ROOT}" --install \
-            "platforms;android-37" \
-            "build-tools;35.0.0" \
-            "ndk;30.0.16248370"
+          sdkmanager --install \
+          "platforms;android-35" \
+          "build-tools;35.0.0" \
+          "ndk;30.0.16248370"
 
       - name: Install cargo-ndk
         run: cargo install cargo-ndk --locked
